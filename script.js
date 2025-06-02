@@ -16,31 +16,22 @@ function convertToRoman(num) {
   [100, 'C'],
   [50, 'L'],
   [10, 'X'],
-  [5 'V'],
+  [5 ,'V'],
   [1, 'I']
 ]);
-let str=num.toString(),res=""
-	let i=0;
-	while(i<str.length-1){
-		if(str[i]<str[i+1]){
-			res+=map.get(str[i+1])
-			res+=map.get(str[i])
-			i+=2
-		}else{
-			res+=str[i]
-			i++
-		}
+	let res=""
+for(let [value,symbol] of map){
+	if(value<=num){
+		res+=symbol
+		num-=value
 	}
-	if(str[str.length-1]<str[str.length-2]){
-		res+=map.get(str[str.length-1])
-	}
+}
 	console.log(res)
-	
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
- console.log(convertToRoman(36));
+ // console.log(convertToRoman(36));
 
 
 
