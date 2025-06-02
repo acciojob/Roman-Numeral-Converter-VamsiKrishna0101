@@ -21,7 +21,7 @@ function convertToRoman(num) {
 ]);
 	let res=""
 for(let [value,symbol] of map){
-	if(value<=num){
+	while(value<=num){
 		res+=symbol
 		num-=value
 	}
